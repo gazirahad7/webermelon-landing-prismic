@@ -1,0 +1,48 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"content": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Esse aliqua qui in qui duis nisi. Esse elit elit culpa cillum dolore eiusmod aliquip deserunt."
+						}
+					}
+				]
+			},
+			"testimage": {
+				"__TYPE__": "ImageContent",
+				"provider": "imgix",
+				"url": "https://images.unsplash.com/photo-1580927752452-89d86da3fa0a?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxMXx8Y29kaW5nfGVufDB8fHx8MTc1NTU5NjMxMXww&ixlib=rb-4.1.0&q=85",
+				"alt": "macbook pro on brown wooden table",
+				"origin": {
+					"id": "SyYmXSDnJ54",
+					"url": "https://images.unsplash.com/photo-1580927752452-89d86da3fa0a?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxMXx8Y29kaW5nfGVufDB8fHx8MTc1NTU5NjMxMXww&ixlib=rb-4.1.0&q=85",
+					"width": 6082,
+					"height": 4055
+				},
+				"width": 6082,
+				"height": 4055,
+				"edit": {
+					"background": "transparent",
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					}
+				},
+				"thumbnails": {}
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
+	}
+]

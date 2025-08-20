@@ -1,0 +1,31 @@
+{
+  "format": "custom",
+  "id": "settings",
+  "label": "Settings",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "items": {
+        "type": "Group",
+        "config": {
+          "label": "Items",
+          "repeat": false,
+          "fields": {
+            "item": {
+              "type": "Link",
+              "config": {
+                "label": "Item",
+                "placeholder": "Item",
+                "select": null,
+                "allowTargetBlank": false,
+                "allowText": true,
+                "repeat": true
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
