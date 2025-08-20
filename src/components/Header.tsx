@@ -27,7 +27,8 @@ export default async function Header() {
     <Bounded as="header" className="py-4 md:py-6 lg:py-8">
       <div className="flex gap-4 items-center justify-between sm:flex-row flex-col">
         <Link href="/">
-          <Icon />
+          {/* <Icon /> */}
+          <h2 className="text-3xl font-bold">LOGO</h2>
         </Link>
 
         <nav>
