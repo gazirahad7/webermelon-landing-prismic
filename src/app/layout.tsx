@@ -11,14 +11,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head></head>
-      <script
-        async
-        defer
-        src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"
-      ></script>
-
-      <body>
+      <body suppressHydrationWarning>
         <Header />
         {children}
         <footer>Footer</footer>

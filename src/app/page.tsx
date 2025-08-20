@@ -12,7 +12,11 @@ export default async function Home() {
   console.log("home data:", home);
 
   // <SliceZone> renders the page's slices.
-  return <SliceZone slices={home.data.slices} components={components} />;
+  return (
+    <div>
+      <SliceZone slices={home.data.slices} components={components} />;
+    </div>
+  );
 }
 
 export async function generateMetadata(): Promise<Metadata> {
