@@ -3,6 +3,7 @@ import "./globals.css";
 import { PrismicPreview } from "@prismicio/next";
 import { repositoryName } from "@/prismicio";
 import Header from "@/components/Header";
+import Hero from "@/components/Hero";
 
 export default function RootLayout({
   children,
@@ -13,6 +14,8 @@ export default function RootLayout({
     <html lang="en">
       <body suppressHydrationWarning>
         <Header />
+        <Hero />
+
         {children}
         <footer>Footer</footer>
 
