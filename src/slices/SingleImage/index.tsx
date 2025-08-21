@@ -23,7 +23,6 @@ const SingleImage: FC<SingleImageProps> = ({ slice }) => {
           <PrismicNextImage
             field={slice.primary.imagefull}
             className="max-w-full mx-auto"
-            alt="Single Image"
             width={slice.primary.imagefull.dimensions?.width}
             height={slice.primary.imagefull.dimensions?.height}
             loading="lazy"
@@ -40,7 +39,6 @@ const SingleImage: FC<SingleImageProps> = ({ slice }) => {
           <PrismicNextImage
             field={slice.primary.imagefull}
             className="max-w-full mx-auto"
-            alt="Single Image"
             width={slice.primary.imagefull.dimensions?.width}
             height={slice.primary.imagefull.dimensions?.height}
             loading="lazy"

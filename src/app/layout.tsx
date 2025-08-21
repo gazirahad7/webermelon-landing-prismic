@@ -3,8 +3,6 @@ import "./globals.css";
 import { PrismicPreview } from "@prismicio/next";
 import { repositoryName } from "@/prismicio";
 import Header from "@/components/Header";
-import CountDown from "@/components/CountDown";
-import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
 
 export default function RootLayout({

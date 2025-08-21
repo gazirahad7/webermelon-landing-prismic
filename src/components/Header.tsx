@@ -1,19 +1,8 @@
-// import React from "react";
-// import { createClient } from "@/prismicio";
-
-// export default async function Header() {
-//   const client = createClient();
-//   const settings = await client.getSingle("settings");
-//   console.log("navigation data:", settings);
-
-//   return <div>Header</div>;
-// }
-
 import { createClient } from "@/prismicio";
 import { PrismicNextLink } from "@prismicio/next";
 import Link from "next/link";
+import Image from "next/image";
 import Bounded from "./Bounded";
-import Icon from "./Logo";
 
 export default async function Header() {
   const client = createClient();
@@ -28,10 +17,12 @@ export default async function Header() {
       <div className="flex gap-4 items-center justify-between sm:flex-row flex-col">
         <Link href="/">
           {/* <Icon /> */}
-          {/* <h2 className="text-3xl font-bold">LOGO</h2> */}
-          <img
+          <Image
             src="https://images.prismic.io/webermelon/aKbFmqTt2nPbaj0z_webermelon-logo.png?auto=format,compress"
             alt="LOGO"
+            width={160}
+            height={40}
+            priority
           />
         </Link>
 
@@ -41,10 +32,13 @@ export default async function Header() {
               <li key={key}>
                 {/* Replace "#" with your real href if you have link field */}
                 <PrismicNextLink
-                  field={{ link_type: "Web", url: `/${text.toLowerCase()}` }}
+                  field={{
+                    link_type: "Web",
+                    url: `/${(text ?? "").toLowerCase()}`,
+                  }}
                   className="p-3 hover:underline"
                 >
-                  {text}
+                  {text ?? ""}
                 </PrismicNextLink>
               </li>
             ))}

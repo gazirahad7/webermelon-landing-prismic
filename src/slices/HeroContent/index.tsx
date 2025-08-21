@@ -46,22 +46,17 @@ const HeroContent: FC<HeroContentProps> = ({ slice }) => {
       <div className="space-y-4 mb-8">
         {slice.primary.title && (
           <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 leading-tight">
-            <PrismicRichText
-              field={slice.primary.title}
-              components={{
-                paragraph: ({ children }) => (
-                  <p className="mb-4 w-2 h-2 bg-green-500 rounded-full mr-2">
-                    {children}
-                  </p>
-                ),
-              }}
-            />
+            <p className="mb-4 w-2 h-2 bg-green-500 rounded-full mr-2">
+              {slice.primary.title}
+            </p>
           </h1>
         )}
 
         {slice.primary.heading && (
           <h2 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 leading-tight">
-            <PrismicRichText field={slice.primary.heading} />
+            {/* <PrismicRichText field={slice.primary.heading} /> */}
+
+            {slice.primary.heading}
           </h2>
         )}
       </div>

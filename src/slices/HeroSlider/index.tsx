@@ -47,7 +47,6 @@ const HeroSlider: FC<HeroSliderProps> = ({ slice }) => {
                 <PrismicNextImage
                   field={item.item}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  fallbackAlt="Development workspace"
                 />
               </div>
 

@@ -8,8 +8,7 @@ import { components } from "@/slices";
 
 export default async function Home() {
   const client = createClient();
-  const home = await client.getSingle("homepage", "homepage");
-  console.log("home data:", home);
+  const home = await client.getSingle("homepage");
 
   // <SliceZone> renders the page's slices.
   return (
