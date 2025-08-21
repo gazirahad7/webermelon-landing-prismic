@@ -1,0 +1,36 @@
+{
+  "id": "hero_slider",
+  "type": "SharedSlice",
+  "name": "HeroSlider",
+  "description": "HeroSlider",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "slideritems": {
+          "type": "Group",
+          "config": {
+            "label": "SliderItems",
+            "repeat": true,
+            "fields": {
+              "item": {
+                "type": "Image",
+                "config": {
+                  "label": "Item",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

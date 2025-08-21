@@ -70,6 +70,9 @@ type ContentRelationshipFieldWithData<
 }[Exclude<TCustomType[number], string>["id"]];
 
 type HomepageDocumentDataSlicesSlice =
+  | SingleImageSlice
+  | HContentSlice
+  | HeroSliderSlice
   | AlternateGrid2Slice
   | CustomerLogosSlice
   | RichTextSlice;
@@ -780,6 +783,188 @@ export type CustomerLogosSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *HContent → Default → Primary*
+ */
+export interface HContentSliceDefaultPrimary {
+  /**
+   * Heading field in *HContent → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: h_content.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Description field in *HContent → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: h_content.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  description: prismic.RichTextField;
+}
+
+/**
+ * Default variation for HContent Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type HContentSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<HContentSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *HContent*
+ */
+type HContentSliceVariation = HContentSliceDefault;
+
+/**
+ * HContent Shared Slice
+ *
+ * - **API ID**: `h_content`
+ * - **Description**: HContent
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type HContentSlice = prismic.SharedSlice<
+  "h_content",
+  HContentSliceVariation
+>;
+
+/**
+ * Primary content in *HeroContent → Default → Primary*
+ */
+export interface HeroContentSliceDefaultPrimary {
+  /**
+   * Title field in *HeroContent → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Offshore web and software development company
+   * - **API ID Path**: hero_content.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Heading field in *HeroContent → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Hire skilled developers  to build your Website & Apps
+   * - **API ID Path**: hero_content.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Description field in *HeroContent → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Description
+   * - **API ID Path**: hero_content.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  description: prismic.RichTextField;
+}
+
+/**
+ * Default variation for HeroContent Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type HeroContentSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<HeroContentSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *HeroContent*
+ */
+type HeroContentSliceVariation = HeroContentSliceDefault;
+
+/**
+ * HeroContent Shared Slice
+ *
+ * - **API ID**: `hero_content`
+ * - **Description**: HeroContent
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type HeroContentSlice = prismic.SharedSlice<
+  "hero_content",
+  HeroContentSliceVariation
+>;
+
+/**
+ * Item in *HeroSlider → Default → Primary → SliderItems*
+ */
+export interface HeroSliderSliceDefaultPrimarySlideritemsItem {
+  /**
+   * Item field in *HeroSlider → Default → Primary → SliderItems*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_slider.default.primary.slideritems[].item
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  item: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *HeroSlider → Default → Primary*
+ */
+export interface HeroSliderSliceDefaultPrimary {
+  /**
+   * SliderItems field in *HeroSlider → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_slider.default.primary.slideritems[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  slideritems: prismic.GroupField<
+    Simplify<HeroSliderSliceDefaultPrimarySlideritemsItem>
+  >;
+}
+
+/**
+ * Default variation for HeroSlider Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type HeroSliderSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<HeroSliderSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *HeroSlider*
+ */
+type HeroSliderSliceVariation = HeroSliderSliceDefault;
+
+/**
+ * HeroSlider Shared Slice
+ *
+ * - **API ID**: `hero_slider`
+ * - **Description**: HeroSlider
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type HeroSliderSlice = prismic.SharedSlice<
+  "hero_slider",
+  HeroSliderSliceVariation
+>;
+
+/**
  * Primary content in *RichText → Default → Primary*
  */
 export interface RichTextSliceDefaultPrimary {
@@ -834,6 +1019,81 @@ export type RichTextSlice = prismic.SharedSlice<
   RichTextSliceVariation
 >;
 
+/**
+ * Primary content in *SingleImage → Default → Primary*
+ */
+export interface SingleImageSliceDefaultPrimary {
+  /**
+   * ImageFull field in *SingleImage → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: single_image.default.primary.imagefull
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  imagefull: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for SingleImage Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type SingleImageSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<SingleImageSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Primary content in *SingleImage → imageCenter → Primary*
+ */
+export interface SingleImageSliceImageCenterPrimary {
+  /**
+   * ImageFull field in *SingleImage → imageCenter → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: single_image.imageCenter.primary.imagefull
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  imagefull: prismic.ImageField<never>;
+}
+
+/**
+ * imageCenter variation for SingleImage Slice
+ *
+ * - **API ID**: `imageCenter`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type SingleImageSliceImageCenter = prismic.SharedSliceVariation<
+  "imageCenter",
+  Simplify<SingleImageSliceImageCenterPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *SingleImage*
+ */
+type SingleImageSliceVariation =
+  | SingleImageSliceDefault
+  | SingleImageSliceImageCenter;
+
+/**
+ * SingleImage Shared Slice
+ *
+ * - **API ID**: `single_image`
+ * - **Description**: SingleImage
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type SingleImageSlice = prismic.SharedSlice<
+  "single_image",
+  SingleImageSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -886,10 +1146,29 @@ declare module "@prismicio/client" {
       CustomerLogosSliceDefaultPrimary,
       CustomerLogosSliceVariation,
       CustomerLogosSliceDefault,
+      HContentSlice,
+      HContentSliceDefaultPrimary,
+      HContentSliceVariation,
+      HContentSliceDefault,
+      HeroContentSlice,
+      HeroContentSliceDefaultPrimary,
+      HeroContentSliceVariation,
+      HeroContentSliceDefault,
+      HeroSliderSlice,
+      HeroSliderSliceDefaultPrimarySlideritemsItem,
+      HeroSliderSliceDefaultPrimary,
+      HeroSliderSliceVariation,
+      HeroSliderSliceDefault,
       RichTextSlice,
       RichTextSliceDefaultPrimary,
       RichTextSliceVariation,
       RichTextSliceDefault,
+      SingleImageSlice,
+      SingleImageSliceDefaultPrimary,
+      SingleImageSliceImageCenterPrimary,
+      SingleImageSliceVariation,
+      SingleImageSliceDefault,
+      SingleImageSliceImageCenter,
     };
   }
 }

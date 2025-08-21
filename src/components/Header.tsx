@@ -28,7 +28,11 @@ export default async function Header() {
       <div className="flex gap-4 items-center justify-between sm:flex-row flex-col">
         <Link href="/">
           {/* <Icon /> */}
-          <h2 className="text-3xl font-bold">LOGO</h2>
+          {/* <h2 className="text-3xl font-bold">LOGO</h2> */}
+          <img
+            src="https://images.prismic.io/webermelon/aKbFmqTt2nPbaj0z_webermelon-logo.png?auto=format,compress"
+            alt="LOGO"
+          />
         </Link>
 
         <nav>

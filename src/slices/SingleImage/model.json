@@ -1,0 +1,46 @@
+{
+  "id": "single_image",
+  "type": "SharedSlice",
+  "name": "SingleImage",
+  "description": "SingleImage",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "imagefull": {
+          "type": "Image",
+          "config": {
+            "label": "ImageFull",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "imageCenter",
+      "name": "imageCenter",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "imagefull": {
+          "type": "Image",
+          "config": {
+            "label": "ImageFull",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
